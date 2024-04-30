@@ -1,0 +1,53 @@
+prefix: LLCM
+fp16: true
+
+# dataset
+sample_method: identity_random
+image_size: (384, 144)
+p_size: 12
+k_size: 10
+
+dataset: llcm
+
+# loss
+bg_kl: true
+sm_kl: true
+IP: true
+decompose: true
+distalign: true
+classification: true
+center_cluster: false
+triplet: true
+center: false
+fb_dt: false
+
+# parameters
+margin: 1.3 #0.7
+# pattern attention
+num_parts: 6
+weight_sep: 0.5
+# mutual learning
+update_rate: 0.2
+weight_sid: 0.5
+weight_KL: 2.5
+
+# architecture
+drop_last_stride: true
+
+# optimizer
+lr: 0.00035
+optimizer: adam
+num_epoch: 160 #160
+lr_step: [55, 95]
+
+# augmentation
+random_flip: true
+random_crop: true
+random_erase: true
+color_jitter: false
+padding: 10
+
+# log
+log_period: 150
+start_eval: 200
+eval_interval: 5
