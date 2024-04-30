@@ -10,7 +10,7 @@ torchvision == 0.11.2
 
 apex == 0.1
 
-3. Training:
+**Training:**
 
 To train the model, you can use following command:
 
